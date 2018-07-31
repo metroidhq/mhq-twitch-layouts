@@ -24,15 +24,6 @@
   );
 }
 
-/* Host Name Positions & Dimensions */
-#container #host-one {
-  bottom: var(--bottom-bar-height);
-  left: var(--host-one-x);
-  width: var(--host-one-width);
-  height: calc(var(--host-one-height) / 5);
-  font-size: calc(var(--host-one-height) / 10);
-}
-
 /* Info Boxes Position & Dimensions */
 #container #info-boxes {
   left: calc(var(--host-one-width) + var(--element-margin));
