@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Layout Overlay</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="styles/layout.css" />
+    <script type="text/javascript" src="scripts/functions.js"></script>
+    <script type="text/javascript" src="scripts/numeral.min.js"></script>
+    <script type="text/javascript" src="scripts/countdown.min.js"></script>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="background">
+        <img id="social-background" src="images/samus.png" />
+      </div>
+
+      <div id="title-container">
+        <span id="game-title"></span>
+      </div>
+
+      <div id="stand-by-box">
+        <div id="stand-by-logo"></div>
+        <div id="stand-by-overlay"></div>
+        <div id="stand-by-text">
+          <div id="stand-by-title"></div>
+          <div id="stand-by-subtitle"></div>
+        </div>
+
+        <!-- <div id="stand-by-radio">
+          <img id="radio-art" src="https://radiohyrule.com/albumart/cover320/default.png" height="108" width="108" />
+
+          <div id="radio-info">
+            <div id="radio-label" class="label">Radio Hyrule</div>
+            <div id="radio-title">Loading ...</div>
+            <div id="radio-artist">radiohyrule.com</div>
+          </div>
+        </div> -->
+      </div>
+
+      <div id="host-one" class="host-box"></div>
+      <div id="host-two" class="host-box"></div>
+      <div id="host-three" class="host-box"></div>
+      <div id="host-four" class="host-box"></div>
+
+      <div id="info-boxes">
+        <div id="latest-donation-box" class="info-box active">
+          <span class="label">Latest Donation</span>
+          <div id="latest-donation">TBD</div>
+        </div>
+
+        <div id="next-game-box" class="info-box">
+          <span class="label">Next Game</span>
+          <div id="next-game"></div>
+        </div>
+      </div>
+
+      <iframe id="chat" src="https://streamlabs.com/widgets/chat-box/v1/CE59A1D8FEF31BEC37ED" width="0" height="0"></iframe>
+      <iframe id="alerts" src="https://streamlabs.com/alert-box/v3/CE59A1D8FEF31BEC37ED?tiltifydonations=1&mute=1" width="0" height="0"></iframe>
+    </div>
+
+    <script type="text/javascript">
+      var params = new URLSearchParams(window.location.search);
+
+      var customStyle = document.createElement('link');
+      customStyle.setAttribute('id', 'custom-css');
+      customStyle.setAttribute('rel', 'stylesheet');
+      customStyle.setAttribute('type', 'text/css');
+      customStyle.setAttribute('href', 'styles/layouts/' + (params.get('layout') || 'default') + '.css');
+      document.getElementsByTagName('head')[0].appendChild(customStyle);
+
+      if (params.has('countdown')) insertCountdown();
+
+      if (params.has('spreadinfo')) {
+        document.getElementById('info-boxes').classList.add('spread');
+      } else {
+        startDataSlideshow();
+      }
+
+      getLatestDonation();
+      setTimeout(adjustNextGameLength, 5000);
+    </script>
+  </body>
+</html>

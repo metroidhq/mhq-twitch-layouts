@@ -1,0 +1,211 @@
+#container {
+  position: relative;
+  overflow: hidden;
+  height: var(--overlay-height);
+  width: var(--overlay-width);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  line-height: 36px;
+  font-size: 36px;
+  color: #FFFFFF;
+  filter: drop-shadow(0px 0px 4px rgba(0,0,0,0.67));
+}
+
+#container #background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #42ca67;
+}
+
+#container #social-background {
+  position: absolute;
+  display: none;
+  opacity: 0.25;
+  transform: translate(-50%, -50%);
+}
+
+#container #title-container {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: var(--bottom-bar-height);
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
+  align-items: center;
+  align-content: center;
+}
+
+#container #game-title {
+  flex: 1;
+  position: relative;
+  bottom: -6px;
+  margin-left: 108px;
+  font-family: 'Logbook Prime';
+  font-weight: 400;
+  font-size: 96px;
+  color: #FFFFFF;
+  white-space: nowrap;
+}
+
+#container #stand-by-box {
+  position: absolute;
+  display: none;
+  width: var(--host-one-width);
+  height: var(--host-one-height);
+  justify-content: center;
+  text-align: center;
+}
+
+#container #stand-by-logo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent url(../images/mhq-logo.png) center/auto no-repeat;
+  opacity: 0.25;
+}
+
+#container #stand-by-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#container #stand-by-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 67%;
+  justify-content: center;
+  text-align: center;
+}
+
+#container #stand-by-title {
+  font-family: 'Logbook Prime';
+  font-size: 256px;
+  line-height: 192px;
+}
+
+#container #latest-donation,
+#container #next-game {
+  display: flex;
+  white-space: nowrap;
+}
+
+#container #chat,
+#container #alerts {
+  position: absolute;
+}
+
+#container #alerts {
+  z-index: 10;
+}
+
+#container #chat,
+#container .host-box {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#container .host-box {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  max-height: var(--info-box-height);
+  height: 0px;
+  font-size: 0px;
+  z-index: -1;
+}
+
+#container #info-boxes {
+  position: absolute;
+  height: 0px;
+  overflow-y: hidden;
+}
+
+#container #info-boxes.spread {
+  display: flex;
+}
+
+#container #info-boxes:not(.spread) {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#container #info-boxes:not(.spread)::before {
+  position: absolute;
+  top: calc(var(--divider-height) * -1);
+  height: var(--divider-height);
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  content: '';
+}
+
+#container #info-boxes:not(.spread)::after {
+  position: absolute;
+  top: calc(var(--divider-height) * -1);
+  height: var(--divider-height);
+  width: calc(100% - var(--element-margin));
+  margin: 0 calc(var(--element-margin) / 2);
+  background-color: rgba(255, 255, 255, 0.12);
+  content: '';
+}
+
+#container #info-boxes .info-box {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  height: var(--info-box-height);
+  padding: 0 8px;
+  overflow-x: hidden;
+}
+
+#container #info-boxes.spread .info-box {
+  flex: 1;
+  margin: 0 calc(var(--element-margin) / 2);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#container #info-boxes.spread .info-box:first-of-type {
+  margin-left: 0px;
+}
+
+#container #info-boxes.spread .info-box:last-of-type {
+  margin-right: 0px;
+}
+
+#container #info-boxes:not(.spread) .info-box {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+}
+
+#container #info-boxes:not(.spread) .info-box.active {
+  opacity: 1;
+	z-index: 2;
+}
+
+#container .label {
+  opacity: 0.8;
+  font-weight: 600;
+  line-height: 18px;
+  font-size: 18px;
+}
+
+#game-title::after { content: 'MHQthon 2018'; }
+#next-game::after { content: '???'; }
+#stand-by-title::after { content: 'Returning Shortly'; }
+#stand-by-subtitle::after { content: 'Please stand by'; }
+
+/* #next-game::after { content: 'Metroid Prime: Federation Force'; }
+#host-one::after { content: 'Elias Thompson'; } */

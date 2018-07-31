@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 400;
+  src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 600;
+  src: url('../fonts/Roboto-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Logbook Prime';
+  font-weight: 400;
+  src: url('../fonts/LogbookPrime-Regular.ttf') format('truetype');
+}
+
+:root {
+  --overlay-width: 1920px;
+  --overlay-height: 1080px;
+  --element-margin: 24px;
+  --bottom-bar-height: 96px;
+  --info-box-height: 73px;
+  --divider-height: 2px;
+}
+
+* {
+  margin: 0;
+  outline: none;
+  border: none;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  display: flex;
+  background-color: transparent;
+}
+
+#preload {
+  display: none;
+}

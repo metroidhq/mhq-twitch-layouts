@@ -1,0 +1,49 @@
+/* OVERLAY CONFIG */
+/* WARNING: Do not change this unless you know what you're doing */
+
+/* Variables */
+:root {
+  --host-one-x: 0px;
+  --host-one-y: 0px;
+  --host-one-width: 1576px;
+  --host-one-height: 984px;
+
+  --social-width: 320px;
+  --social-height: 984px;
+}
+
+/* Unhide Stand By Box */
+#container #stand-by-box {
+  display: flex;
+}
+
+/* Info Boxes Position & Dimensions */
+#container #info-boxes {
+  left: calc(var(--host-one-width) + var(--element-margin));
+  bottom: var(--bottom-bar-height);
+  height: var(--info-box-height);
+  width: var(--social-width);
+  overflow-y: visible;
+}
+
+/* Alerts & Chat Position & Dimensions */
+#container #chat,
+#container #alerts {
+  top: var(--host-one-y);
+  left: calc(var(--host-one-width) + var(--element-margin));
+  width: var(--social-width);
+}
+
+#container #chat {
+  height: calc(var(--social-height) - calc(var(--info-box-height) + var(--divider-height)));
+}
+
+#container #alerts {
+  height: var(--social-height);
+}
+
+#container #social-background {
+  display: flex;
+  top: calc(var(--host-one-y) + calc(var(--social-height) / 2));
+  left: calc(calc(var(--host-one-width) + var(--element-margin)) + calc(var(--social-width) / 2));
+}

@@ -1,0 +1,81 @@
+/* OVERLAY CONFIG */
+/* WARNING: Do not change this unless you know what you're doing */
+
+/* Variables */
+:root {
+  --game-one-x: 0px;
+  --game-one-y: 0px;
+  --game-one-width: 1312px;
+  --game-one-height: 984px;
+
+  --game-two-x: 1336px;
+  --game-two-y: 0px;
+  --game-two-width: 584px;
+  --game-two-height: 438px;
+
+  --host-one-x: 1336px;
+  --host-one-y: 744px;
+  --host-one-width: 584px;
+  --host-one-height: 240px;
+
+  --social-width: 584px;
+  --social-height: 258px;
+}
+
+/* Layout Path */
+#container #background {
+  clip-path: polygon(
+    var(--game-one-width) var(--game-one-y),
+    var(--game-one-width) var(--game-one-height),
+    var(--game-one-x) var(--game-one-height),
+    var(--game-one-x) var(--overlay-height),
+    var(--overlay-width) var(--overlay-height),
+    var(--overlay-width) calc(var(--overlay-height) - var(--bottom-bar-height)),
+    var(--host-one-x) calc(var(--overlay-height) - var(--bottom-bar-height)),
+    var(--host-one-x) var(--host-one-y),
+    var(--overlay-width) var(--host-one-y),
+    var(--overlay-width) var(--game-two-height),
+    var(--game-two-x) var(--game-two-height),
+    var(--game-two-x) var(--game-one-y)
+  );
+}
+
+/* Host Name Positions & Dimensions */
+#container #host-one {
+  bottom: var(--bottom-bar-height);
+  left: var(--host-one-x);
+  width: var(--host-one-width);
+  height: calc(var(--host-one-height) / 5);
+  font-size: calc(var(--host-one-height) / 10);
+}
+
+/* Info Boxes Position & Dimensions */
+#container #info-boxes {
+  left: calc(var(--game-one-width) + var(--element-margin));
+  bottom: calc(var(--bottom-bar-height) + var(--host-one-height) + var(--element-margin));
+  width: var(--host-one-width);
+  height: var(--info-box-height);
+  overflow-y: visible;
+}
+
+/* Alerts & Chat Position & Dimensions */
+#container #chat,
+#container #alerts {
+  top: calc(var(--game-two-height) + var(--element-margin));
+  left: calc(var(--game-one-width) + var(--element-margin));
+  width: var(--social-width);
+}
+
+#container #chat {
+  height: calc(var(--social-height) - calc(var(--info-box-height) + var(--divider-height)));
+}
+
+#container #alerts {
+  height: var(--social-height);
+}
+
+#container #social-background {
+  display: flex;
+  top: calc(calc(var(--game-two-height) + var(--element-margin)) + calc(var(--social-height) / 2));
+  left: calc(calc(var(--game-one-width) + var(--element-margin)) + calc(var(--social-width) / 2));
+}
