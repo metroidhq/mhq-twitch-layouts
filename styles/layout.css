@@ -202,10 +202,10 @@
   font-size: 18px;
 }
 
-#game-title::after { content: 'MHQthon 2018'; }
-#next-game::after { content: '???'; }
-#stand-by-title::after { content: 'Returning Shortly'; }
-#stand-by-subtitle::after { content: 'Please stand by'; }
+/* #game-title::after { content: 'MHQthon 2018'; }
+#next-game::after { content: '???'; } */
+/* #stand-by-title::after { content: 'Returning Shortly'; } */
+/* #stand-by-subtitle::after { content: 'Please stand by'; } */
 
 /* #next-game::after { content: 'Metroid Prime: Federation Force'; }
 #host-one::after { content: 'Elias Thompson'; } */

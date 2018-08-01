@@ -70,6 +70,11 @@
       document.getElementsByTagName('head')[0].appendChild(customStyle);
 
       if (params.has('countdown')) insertCountdown();
+      if (params.has('standbytitle')) document.getElementById('stand-by-title').textContent = params.get('standbytitle');
+      if (params.has('standbysubtitle')) document.getElementById('stand-by-subtitle').textContent = params.get('standbysubtitle');
+      if (params.has('gametitle')) document.getElementById('game-title').textContent = params.get('gametitle');
+      if (params.has('nextgame')) document.getElementById('next-game').textContent = params.get('nextgame');
+      if (params.has('player')) document.getElementById('host-one').textContent = params.get('player');
 
       if (params.has('spreadinfo')) {
         document.getElementById('info-boxes').classList.add('spread');
