@@ -36,7 +36,7 @@ For each game your location is streaming, do the following steps.
 ```css
 #game-title::after { content: '<Game Name>'; }
 #next-game::after { content: '<Next Game in Schedule>'; }
-ost-one::after { content: '<PlayerName>'; }
+#host-one::after { content: '<PlayerName>'; }
   ```
 
 * If you are the last game on the schedule, remove the `#next-game` line of CSS.
