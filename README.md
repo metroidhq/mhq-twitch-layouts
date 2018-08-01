@@ -1,7 +1,5 @@
 # MHQthon 2018 Layouts
 
-Layouts for MHQthon 2018.
-
 ## Getting Started
 To get started, clone or download & unzip this repo onto your computer in a place that OBS Studio or your broadcasting software of choice can access local HTML files.
 
@@ -37,12 +35,7 @@ To get started, clone or download & unzip this repo onto your computer in a plac
 #next-game::after { content: '<Next Game in Schedule>'; }
   ```
 
-* If you are the last game on the schedule, set the `#next-game` line of CSS to `Nothing` or the met incentive game goal.
-* Valid Layout Names are `nes`, `snes`, `fullscreen`, `widescreen`, `gb`, `gba`, `ds`, `dstall`, `3ds`.
-  * If you provide an invalid Layout Name, it should be immediately evident in the rendering of the layout.
-
 5) Add and position your camera and audio sources under the Overlays.
-* For some of the older consoles like NES or SNES, you may have to skew the game capture, as the fullscreen output of the game is not the native resolution of the console.
 
 ### Game Views
 For each game your location is streaming, do the following steps:
@@ -128,3 +121,10 @@ For each game your location is streaming, do the following steps:
   ```
   
 5) Add your desktop audio source and a source for Metroid music looping playback of your choice.
+
+## Notes
+
+* Valid Layout Names are `nes`, `snes`, `fullscreen`, `widescreen`, `gb`, `gba`, `ds`, `dstall`, `3ds`.
+  * If you provide an invalid Layout Name, it should be immediately evident in the rendering of the layout.
+* If you are the last game on the schedule, set the `#next-game` line of CSS to `Nothing` or the met incentive game goal.
+* For some of the older consoles like NES or SNES, you may have to skew the game capture, as the fullscreen output of the game is not the native resolution of the console.
