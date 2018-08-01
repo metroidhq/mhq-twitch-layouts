@@ -124,7 +124,7 @@ For each game your location is streaming, do the following steps:
 
 ## Notes
 
-* Valid Layout Names are `nes`, `snes`, `fullscreen`, `widescreen`, `gb`, `gba`, `ds`, `dstall`, `3ds`.
+* Valid Layout Names are `host`, `nes`, `snes`, `fullscreen`, `widescreen`, `gb`, `gba`, `ds`, `dstall`, `3ds`.
   * If you provide an invalid Layout Name, it should be immediately evident in the rendering of the layout.
 * If you are the last game on the schedule, set the `#next-game` line of CSS to `Nothing` or the met incentive game goal.
 * For some of the older consoles like NES or SNES, you may have to skew the game capture, as the fullscreen output of the game is not the native resolution of the console.
