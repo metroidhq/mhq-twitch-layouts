@@ -72,11 +72,16 @@ function getLatestDonation() {
   request.send();
 };
 
-function adjustNextGameLength() {
-  var node = document.getElementById('next-game');
+function adjustInfoLength() {
+  var latestDonation = document.getElementById('latest-donation');
+  var nextGame = document.getElementById('next-game');
 
-  var containerWidth = Number(window.getComputedStyle(node.parentNode).width.split('px')[0]);
-  var titleWidth = Number(window.getComputedStyle(node).width.split('px')[0]);
+  var containerWidth = Number(window.getComputedStyle(nextGame.parentNode).width.split('px')[0]);
+  var latestDonationWidth = Number(window.getComputedStyle(latestDonation).width.split('px')[0]);
+  var nextGameWidth = Number(window.getComputedStyle(nextGame).width.split('px')[0]);
 
-  if (containerWidth < titleWidth) node.setAttribute('style', 'align-self: flex-start;');
+  if (containerWidth < latestDonationWidth) latestDonation.setAttribute('style', 'align-self: flex-start;');
+  if (containerWidth < nextGameWidth) nextGame.setAttribute('style', 'align-self: flex-start;');
+
+  setTimeout(adjustInfoLength, 15000);
 };
