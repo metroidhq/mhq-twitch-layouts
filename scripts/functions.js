@@ -81,7 +81,10 @@ function adjustInfoLength() {
   var nextGameWidth = Number(window.getComputedStyle(nextGame).width.split('px')[0]);
 
   if (containerWidth < latestDonationWidth) latestDonation.setAttribute('style', 'align-self: flex-start;');
+  else latestDonation.setAttribute('style', '');
+
   if (containerWidth < nextGameWidth) nextGame.setAttribute('style', 'align-self: flex-start;');
+  else nextGame.setAttribute('style', '');
 
   setTimeout(adjustInfoLength, 15000);
 };
