@@ -1,0 +1,99 @@
+/* OVERLAY CONFIG */
+/* WARNING: Do not change this unless you know what you're doing */
+
+/* Variables */
+:root {
+  --game-one-x: 0px;
+  --game-one-y: 0px;
+  --game-one-width: 948px;
+  --game-one-height: 632px;
+
+  --game-two-x: 972px;
+  --game-two-y: 0px;
+  --game-two-width: 948px;
+  --game-two-height: 632px;
+
+  --host-one-x: 0px;
+  --host-one-y: 656px;
+  --host-one-width: 575px;
+  --host-one-height: 328px;
+
+  --host-two-x: 1345px;
+  --host-two-y: 656px;
+  --host-two-width: 575px;
+  --host-two-height: 328px;
+
+  --social-width: 722px;
+  --social-height: 328px;
+}
+
+/* Layout Path */
+#container #background {
+  clip-path: polygon(
+    var(--game-one-width) var(--game-one-y),
+    var(--game-one-width) var(--game-one-height),
+    var(--game-one-x) var(--game-one-height),
+    var(--game-one-x) var(--host-one-y),
+    var(--host-one-width) var(--host-one-y),
+    var(--host-one-width) calc(var(--host-one-y) + var(--host-one-height)),
+    var(--host-one-x) calc(var(--host-one-y) + var(--host-one-height)),
+    var(--host-one-x) var(--overlay-height),
+    var(--overlay-width) var(--overlay-height),
+    var(--overlay-width) calc(var(--host-two-y) + var(--host-two-height)),
+    var(--host-two-x) calc(var(--host-two-y) + var(--host-two-height)),
+    var(--host-two-x) var(--host-two-y),
+    var(--overlay-width) var(--host-two-y),
+    var(--overlay-width) var(--game-two-height),
+    var(--game-two-x) var(--game-two-height),
+    var(--game-two-x) var(--game-two-y)
+  );
+}
+
+/* Host Name Positions & Dimensions */
+#container #host-one {
+  bottom: var(--bottom-bar-height);
+  left: var(--host-one-x);
+  width: var(--host-one-width);
+  height: calc(var(--host-one-height) / 5);
+  font-size: calc(var(--host-one-height) / 10);
+}
+
+/* Host Name Positions & Dimensions */
+#container #host-two {
+  bottom: var(--bottom-bar-height);
+  left: var(--host-two-x);
+  width: var(--host-two-width);
+  height: calc(var(--host-two-height) / 5);
+  font-size: calc(var(--host-two-height) / 10);
+}
+
+/* Info Boxes Position & Dimensions */
+#container #info-boxes {
+  left: calc(var(--host-one-width) + var(--element-margin));
+  bottom: var(--bottom-bar-height);
+  width: var(--social-width);
+  height: var(--info-box-height);
+  overflow-y: visible;
+}
+
+/* Alerts & Chat Position & Dimensions */
+#container #chat,
+#container #alerts {
+  top: var(--host-one-y);
+  left: calc(var(--host-one-width) + var(--element-margin));
+  width: var(--social-width);
+}
+
+#container #chat {
+  height: calc(var(--social-height) - calc(var(--info-box-height) + var(--divider-height)));
+}
+
+#container #alerts {
+  height: var(--social-height);
+}
+
+#container #social-background {
+  display: flex;
+  top: calc(var(--host-one-y) + calc(var(--social-height) / 2));
+  left: calc(calc(var(--host-one-width) + var(--element-margin)) + calc(var(--social-width) / 2));
+}
