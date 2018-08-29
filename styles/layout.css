@@ -22,7 +22,7 @@
   position: absolute;
   display: none;
   opacity: 0.25;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -33%);
 }
 
 #container #title-container {
@@ -89,8 +89,9 @@
   line-height: 192px;
 }
 
-#container #latest-donation,
-#container #next-game {
+#container #latest-follower,
+#container #latest-subscriber,
+#container #website {
   display: flex;
   white-space: nowrap;
 }
@@ -202,10 +203,8 @@
   font-size: 18px;
 }
 
-/* #game-title::after { content: 'MHQthon 2018'; }
-#next-game::after { content: '???'; } */
+/* Example Custom CSS */
+/* #game-title::after { content: 'Metroid Fusion 100% Practice'; } */
 /* #stand-by-title::after { content: 'Returning Shortly'; } */
 /* #stand-by-subtitle::after { content: 'Please stand by'; } */
-
-/* #next-game::after { content: 'Metroid Prime: Federation Force'; }
-#host-one::after { content: 'Elias Thompson'; } */
+/* #host1::after { content: 'Elias Thompson'; } */

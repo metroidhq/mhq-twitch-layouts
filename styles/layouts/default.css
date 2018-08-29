@@ -3,10 +3,10 @@
 
 /* Variables */
 :root {
-  --host-one-x: 0px;
-  --host-one-y: 0px;
-  --host-one-width: 1576px;
-  --host-one-height: 984px;
+  --host1-x: 0px;
+  --host1-y: 0px;
+  --host1-width: 1576px;
+  --host1-height: 984px;
 
   --social-width: 320px;
   --social-height: 984px;
@@ -19,7 +19,7 @@
 
 /* Info Boxes Position & Dimensions */
 #container #info-boxes {
-  left: calc(var(--host-one-width) + var(--element-margin));
+  left: calc(var(--host1-width) + var(--element-margin));
   bottom: var(--bottom-bar-height);
   height: var(--info-box-height);
   width: var(--social-width);
@@ -29,8 +29,8 @@
 /* Alerts & Chat Position & Dimensions */
 #container #chat,
 #container #alerts {
-  top: var(--host-one-y);
-  left: calc(var(--host-one-width) + var(--element-margin));
+  top: var(--host1-y);
+  left: calc(var(--host1-width) + var(--element-margin));
   width: var(--social-width);
 }
 
@@ -44,6 +44,6 @@
 
 #container #social-background {
   display: flex;
-  top: calc(var(--host-one-y) + calc(var(--social-height) / 2));
-  left: calc(calc(var(--host-one-width) + var(--element-margin)) + calc(var(--social-width) / 2));
+  top: calc(var(--host1-y) + calc(var(--social-height) / 2));
+  left: calc(calc(var(--host1-width) + var(--element-margin)) + calc(var(--social-width) / 2));
 }

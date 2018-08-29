@@ -9,14 +9,21 @@
   </head>
 
   <body>
-    <iframe id="alerts" src="https://streamlabs.com/alert-box/v3/CE59A1D8FEF31BEC37ED?tiltifydonations=1" width="0" height="0"></iframe>
+    <iframe id="alerts" src="https://streamlabs.com/alert-box/v3/CE59A1D8FEF31BEC37ED?follows=1&subscriptions=1&donations=1&hosts=1&bits=1&raids=1&redemptions=1" width="0" height="0"></iframe>
 
     <div id="container">
-      <img src="images/mhq-logo.png" height="96">
-      <span id="donation-amount">$0.00</span>
-      <img src="images/cpc-logo.png" height="96">
+      <img src="./images/mhq-logo.png" height="96">
+      <span id="game-title">Test</span>
+      <span id="total-followers">0</span>
+      <span id="total-subscribers">0</span>
     </div>
 
-    <script type="text/javascript"> getDonationAmount(); </script>
+    <script type="text/javascript">
+      var params = new URLSearchParams(window.location.search);
+
+      if (params.has('gametitle')) document.getElementById('game-title').textContent = params.get('gametitle');
+
+      getData();
+    </script>
   </body>
 </html>

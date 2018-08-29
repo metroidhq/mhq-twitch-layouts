@@ -3,20 +3,20 @@
 
 /* Variables */
 :root {
-  --game-one-x: 0px;
-  --game-one-y: 0px;
-  --game-one-width: 656px;
-  --game-one-height: 492px;
+  --game1-x: 0px;
+  --game1-y: 0px;
+  --game1-width: 656px;
+  --game1-height: 492px;
 
-  --game-two-x: 0px;
-  --game-two-y: 492px;
-  --game-two-width: 656px;
-  --game-two-height: 492px;
+  --game2-x: 0px;
+  --game2-y: 492px;
+  --game2-width: 656px;
+  --game2-height: 492px;
 
-  --host-one-x: 680px;
-  --host-one-y: 488px;
-  --host-one-width: 1240px;
-  --host-one-height: 496px;
+  --host1-x: 680px;
+  --host1-y: 488px;
+  --host1-width: 1240px;
+  --host1-height: 496px;
 
   --social-width: 1240px;
   --social-height: 464px;
@@ -25,33 +25,33 @@
 /* Layout Path */
 #container #background {
   clip-path: polygon(
-    var(--game-one-width) var(--game-one-y),
-    var(--game-one-width) calc(var(--game-one-height) + var(--game-two-height)),
-    var(--game-one-x) calc(var(--game-one-height) + var(--game-two-height)),
-    var(--game-one-x) var(--overlay-height),
+    var(--game1-width) var(--game1-y),
+    var(--game1-width) calc(var(--game1-height) + var(--game2-height)),
+    var(--game1-x) calc(var(--game1-height) + var(--game2-height)),
+    var(--game1-x) var(--overlay-height),
     var(--overlay-width) var(--overlay-height),
     var(--overlay-width) calc(var(--overlay-height) - var(--bottom-bar-height)),
-    var(--host-one-x) calc(var(--overlay-height) - var(--bottom-bar-height)),
-    var(--host-one-x) var(--host-one-y),
-    var(--overlay-width) var(--host-one-y),
-    var(--overlay-width) var(--game-one-y)
+    var(--host1-x) calc(var(--overlay-height) - var(--bottom-bar-height)),
+    var(--host1-x) var(--host1-y),
+    var(--overlay-width) var(--host1-y),
+    var(--overlay-width) var(--game1-y)
   );
 }
 
 /* Host Name Positions & Dimensions */
-#container #host-one {
+#container #host1 {
   bottom: var(--bottom-bar-height);
-  left: var(--host-one-x);
-  width: var(--host-one-width);
-  height: calc(var(--host-one-height) / 5);
+  left: var(--host1-x);
+  width: var(--host1-width);
+  height: calc(var(--host1-height) / 5);
   font-size: calc(var(--info-box-height) / 2);
 }
 
 /* Info Boxes Position & Dimensions */
 #container #info-boxes {
-  left: calc(var(--game-one-width) + var(--element-margin));
-  bottom: calc(var(--bottom-bar-height) + var(--host-one-height) + var(--element-margin));
-  width: var(--host-one-width);
+  left: calc(var(--game1-width) + var(--element-margin));
+  bottom: calc(var(--bottom-bar-height) + var(--host1-height) + var(--element-margin));
+  width: var(--host1-width);
   height: var(--info-box-height);
   overflow-y: visible;
 }
@@ -59,8 +59,8 @@
 /* Alerts & Chat Position & Dimensions */
 #container #chat,
 #container #alerts {
-  top: var(--game-one-y);
-  left: calc(var(--game-one-width) + var(--element-margin));
+  top: var(--game1-y);
+  left: calc(var(--game1-width) + var(--element-margin));
   width: var(--social-width);
 }
 
@@ -74,6 +74,6 @@
 
 #container #social-background {
   display: flex;
-  top: calc(var(--game-one-y) + calc(var(--social-height) / 2));
-  left: calc(calc(var(--game-one-width) + var(--element-margin)) + calc(var(--social-width) / 2));
+  top: calc(var(--game1-y) + calc(var(--social-height) / 2));
+  left: calc(calc(var(--game1-width) + var(--element-margin)) + calc(var(--social-width) / 2));
 }

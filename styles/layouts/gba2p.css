@@ -1,0 +1,98 @@
+/* OVERLAY CONFIG */
+/* WARNING: Do not change this unless you know what you're doing */
+
+/* Variables */
+:root {
+  --game1-x: 0px;
+  --game1-y: 0px;
+  --game1-width: 948px;
+  --game1-height: 632px;
+
+  --game2-x: 972px;
+  --game2-y: 0px;
+  --game2-width: 948px;
+  --game2-height: 632px;
+
+  --host1-x: 0px;
+  --host1-y: 656px;
+  --host1-width: 575px;
+  --host1-height: 328px;
+
+  --host2-x: 1345px;
+  --host2-y: 656px;
+  --host2-width: 575px;
+  --host2-height: 328px;
+
+  --social-width: 722px;
+  --social-height: 328px;
+}
+
+/* Layout Path */
+#container #background {
+  clip-path: polygon(
+    var(--game1-width) var(--game1-y),
+    var(--game1-width) var(--game1-height),
+    var(--game1-x) var(--game1-height),
+    var(--game1-x) var(--host1-y),
+    var(--host1-width) var(--host1-y),
+    var(--host1-width) calc(var(--host1-y) + var(--host1-height)),
+    var(--host1-x) calc(var(--host1-y) + var(--host1-height)),
+    var(--host1-x) var(--overlay-height),
+    var(--overlay-width) var(--overlay-height),
+    var(--overlay-width) calc(var(--host2-y) + var(--host2-height)),
+    var(--host2-x) calc(var(--host2-y) + var(--host2-height)),
+    var(--host2-x) var(--host2-y),
+    var(--overlay-width) var(--host2-y),
+    var(--overlay-width) var(--game2-height),
+    var(--game2-x) var(--game2-height),
+    var(--game2-x) var(--game2-y)
+  );
+}
+
+/* Host Name Positions & Dimensions */
+#container #host1 {
+  bottom: var(--bottom-bar-height);
+  left: var(--host1-x);
+  width: var(--host1-width);
+  height: calc(var(--host1-height) / 5);
+  font-size: calc(var(--host1-height) / 10);
+}
+
+#container #host2 {
+  bottom: var(--bottom-bar-height);
+  left: var(--host2-x);
+  width: var(--host2-width);
+  height: calc(var(--host2-height) / 5);
+  font-size: calc(var(--host2-height) / 10);
+}
+
+/* Info Boxes Position & Dimensions */
+#container #info-boxes {
+  left: calc(var(--host1-width) + var(--element-margin));
+  bottom: var(--bottom-bar-height);
+  width: var(--social-width);
+  height: var(--info-box-height);
+  overflow-y: visible;
+}
+
+/* Alerts & Chat Position & Dimensions */
+#container #chat,
+#container #alerts {
+  top: var(--host1-y);
+  left: calc(var(--host1-width) + var(--element-margin));
+  width: var(--social-width);
+}
+
+#container #chat {
+  height: calc(var(--social-height) - calc(var(--info-box-height) + var(--divider-height)));
+}
+
+#container #alerts {
+  height: var(--social-height);
+}
+
+#container #social-background {
+  display: flex;
+  top: calc(var(--host1-y) + calc(var(--social-height) / 2));
+  left: calc(calc(var(--host1-width) + var(--element-margin)) + calc(var(--social-width) / 2));
+}

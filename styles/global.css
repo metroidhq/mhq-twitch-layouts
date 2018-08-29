@@ -7,6 +7,7 @@ body {
   position: absolute;
   bottom: 0;
   display: flex;
+  justify-content: space-between;
   overflow: hidden;
   width: 100%;
   height: var(--bottom-bar-height);
@@ -18,12 +19,41 @@ body {
   color: #FFFFFF;
 }
 
-#container #donation-amount {
+#container #game-title {
   flex: 1;
   position: relative;
+  bottom: -6px;
+  margin-left: 12px;
+  font-family: 'Logbook Prime';
+  font-weight: 400;
+  font-size: 96px;
+  color: #FFFFFF;
+  white-space: nowrap;
+}
+
+#container #total-followers,
+#container #total-subscribers {
+  position: relative;
   bottom: -5px;
+  display: none;
   margin: 0 12px 0 24px;
   text-align: right;
+}
+
+#container #total-followers::before,
+#container #total-subscribers::before {
+  height: 40px;
+  width: 40px;
+  margin-right: 12px;
+  content: '';
+}
+
+#container #total-followers::before {
+  background: transparent url('../images/followers.svg') no-repeat;
+}
+
+#container #total-subscribers::before {
+  background: transparent url('../images/subscribers.svg') no-repeat;
 }
 
 #alerts {

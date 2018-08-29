@@ -26,37 +26,32 @@
           <div id="stand-by-title"></div>
           <div id="stand-by-subtitle"></div>
         </div>
-
-        <!-- <div id="stand-by-radio">
-          <img id="radio-art" src="https://radiohyrule.com/albumart/cover320/default.png" height="108" width="108" />
-
-          <div id="radio-info">
-            <div id="radio-label" class="label">Radio Hyrule</div>
-            <div id="radio-title">Loading ...</div>
-            <div id="radio-artist">radiohyrule.com</div>
-          </div>
-        </div> -->
       </div>
 
-      <div id="host-one" class="host-box"></div>
-      <div id="host-two" class="host-box"></div>
-      <div id="host-three" class="host-box"></div>
-      <div id="host-four" class="host-box"></div>
+      <div id="host1" class="host-box"></div>
+      <div id="host2" class="host-box"></div>
+      <div id="host3" class="host-box"></div>
+      <div id="host4" class="host-box"></div>
 
       <div id="info-boxes">
-        <div id="latest-donation-box" class="info-box active">
-          <span class="label">Latest Donation</span>
-          <div id="latest-donation">TBD</div>
+        <div id="latest-follower-box" class="info-box active">
+          <span class="label">Latest Follower</span>
+          <div id="latest-follower">???</div>
         </div>
 
-        <div id="next-game-box" class="info-box">
-          <span class="label">Next Game</span>
-          <div id="next-game"></div>
+        <!-- <div id="latest-subscriber-box" class="info-box">
+          <span class="label">Latest Subscriber</span>
+          <div id="latest-subscriber">???</div>
+        </div> -->
+
+        <div id="website-box" class="info-box">
+          <span class="label">Website</span>
+          <div id="website">metroidhq.com</div>
         </div>
       </div>
 
       <iframe id="chat" src="https://streamlabs.com/widgets/chat-box/v1/CE59A1D8FEF31BEC37ED" width="0" height="0"></iframe>
-      <iframe id="alerts" src="https://streamlabs.com/alert-box/v3/CE59A1D8FEF31BEC37ED?tiltifydonations=1&mute=1" width="0" height="0"></iframe>
+      <iframe id="alerts" src="https://streamlabs.com/alert-box/v3/CE59A1D8FEF31BEC37ED?follows=1&subscriptions=1&donations=1&hosts=1&bits=1&raids=1&redemptions=1&mute=1" width="0" height="0"></iframe>
     </div>
 
     <script type="text/javascript">
@@ -70,20 +65,22 @@
       document.getElementsByTagName('head')[0].appendChild(customStyle);
 
       if (params.has('countdown')) insertCountdown();
+      if (params.has('nochat')) document.getElementById('chat').style.display = 'none';
       if (params.has('standbytitle')) document.getElementById('stand-by-title').textContent = params.get('standbytitle');
       if (params.has('standbysubtitle')) document.getElementById('stand-by-subtitle').textContent = params.get('standbysubtitle');
       if (params.has('gametitle')) document.getElementById('game-title').textContent = params.get('gametitle');
-      if (params.has('nextgame')) document.getElementById('next-game').textContent = params.get('nextgame');
-      if (params.has('player')) document.getElementById('host-one').textContent = params.get('player');
+      if (params.has('host1')) document.getElementById('host1').textContent = params.get('host1');
+      if (params.has('host2')) document.getElementById('host2').textContent = params.get('host2');
+      if (params.has('host3')) document.getElementById('host3').textContent = params.get('host3');
+      if (params.has('host4')) document.getElementById('host4').textContent = params.get('host4');
 
-      if (params.has('spreadinfo')) {
+      if (params.get('layout') === 'widescreen' || params.get('layout') === '3ds') {
         document.getElementById('info-boxes').classList.add('spread');
       } else {
         startDataSlideshow();
       }
 
-      getLatestDonation();
-      setTimeout(adjustInfoLength, 5000);
+      getData();
     </script>
   </body>
 </html>
