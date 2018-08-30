@@ -52,8 +52,8 @@
 #container #stand-by-box {
   position: absolute;
   display: none;
-  width: var(--host-one-width);
-  height: var(--host-one-height);
+  width: 0px;
+  height: 0px;
   justify-content: center;
   text-align: center;
 }

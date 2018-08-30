@@ -24,6 +24,15 @@
   );
 }
 
+/* Host Name Positions & Dimensions */
+#container #host1 {
+  bottom: var(--bottom-bar-height);
+  left: var(--host1-x);
+  width: var(--host1-width);
+  height: calc(var(--host1-height) / 5);
+  font-size: calc(var(--info-box-height) / 2);
+}
+
 /* Info Boxes Position & Dimensions */
 #container #info-boxes {
   left: calc(var(--host1-width) + var(--element-margin));
