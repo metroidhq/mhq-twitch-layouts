@@ -23,7 +23,7 @@ function insertCountdown() {
 function getData() {
   var request = new XMLHttpRequest();
 
-  request.open('GET', 'http://localhost:8080/v1/data');
+  request.open('GET', 'http://metroidhq.com:8080/v1/data');
 
   request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
